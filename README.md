@@ -1,0 +1,2 @@
+# Traditional-Chinese-Medicine
+基于SpringBoot+Vue的中医在线诊断与药方推荐平台 使用ElasticSearch、Redis、RabbitMQ等分布式框架，使用文本相似度算法进行药方推荐
