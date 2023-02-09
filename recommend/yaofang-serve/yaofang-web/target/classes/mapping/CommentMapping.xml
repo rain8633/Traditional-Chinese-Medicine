@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syxu.yaofang.mapper.CommentMapper">
+    <insert id="addComment" parameterType="Comment">
+        insert into comment(bingli_id,content,create_time,role)
+        values (#{bingliId},#{content},#{createTime},#{role})
+    </insert>
+
+    <select id="queryAllComment" parameterType="Integer" resultType="com.syxu.yaofang.pojo.CommentPoJo">
+        select comment.id,dname,pic,content,comment.create_time,user_name,img,role,comment.status
+        from comment
+        left join bingli on comment.bingli_id = bingli.id
+        left join doctor on bingli.doctor_id = doctor.id
+        left join client on bingli.client_id = client.id
+        where bingli_id = #{bingliId}
+    </select>
+
+    <select id="queryNewcommentNum" parameterType="Integer" resultType="Integer">
+        select count(*)
+        from comment
+        left join bingli on comment.bingli_id = bingli.id
+        left join doctor on bingli.doctor_id = doctor.id and doctor.id=#{id}
+        where comment.status = 0 and comment.role = 0
+    </select>
+
+    <select id="queryNewComment" resultType="com.syxu.yaofang.pojo.BingLiPoJo">
+       select bingli.client_id,bingli.doctor_id, bingli.id,user_name,real_name,phone,email,client_age,info,pic1,pic2,pic3,bingli.status,comment.content
+        from comment
+        left join bingli on comment.bingli_id = bingli.id and comment.status = 0 and comment.role = 0
+        left join client on client.id = bingli.client_id
+        where bingli.doctor_id = #{doctorId}
+    </select>
+
+    <update id="updateCommentStatus" parameterType="Integer">
+        update comment set status = 1 where bingli_id = #{bingliId} and role = #{role}
+    </update>
+
+    <delete id="deleteCommentById" parameterType="Integer">
+        delete from comment where id=#{id}
+    </delete>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syxu.yaofang.mapper.DoctorMapper">
+<insert id="addDoctor" parameterType="Doctor">
+    insert into doctor(dname,password,phone,email,sex,city_name,hosp_name,ks_name,pic)
+    values (#{dname},#{password},#{phone},#{email},#{sex},#{cityName},#{hospName},#{ksName},#{pic})
+</insert>
+
+    <select id="findDoctorByName" parameterType="String" resultType="Doctor">
+        select * from doctor where dname=#{dname}
+    </select>
+
+    <select id="queryDoctorById" parameterType="Integer" resultType="Doctor">
+        select * from doctor where id = #{id}
+    </select>
+
+    <select id="findDoctorByNameAndPw" resultType="Doctor">
+        select * from doctor where (phone=#{name} or email = #{name}) and password = #{password}
+    </select>
+
+    <select id="queryDocList" resultType="Doctor" parameterType="Doctor">
+       select * from doctor
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="cityName != null and cityName != ''">
+                and city_name = #{cityName}
+            </if>
+
+            <if test="ksName != null and ksName != ''">
+                and  ks_name = #{ksName}
+            </if>
+            <if test="hospName != null and hospName != ''">
+                and hosp_name = #{hospName}
+            </if>
+        </where>
+    </select>
+    
+    <update id="updatedoctorMsg" parameterType="Doctor">
+        update doctor set password = #{password},email=#{email},phone=#{phone},info=#{info}
+        where id = #{id} 
+    </update>
+    
+    <update id="updatedoctorImg" parameterType="Doctor">
+        update doctor set pic = #{pic} where id=#{id}
+    </update>
+
+    <select id="queryDocByBingliId" parameterType="Integer" resultType="Doctor">
+        select doctor.email
+        from bingli
+        left join doctor on doctor.id = bingli.doctor_id
+        where bingli.id = #{bingliId}
+    </select>
+</mapper>

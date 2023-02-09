@@ -1,0 +1,29 @@
+@import "var.scss";
+@import "global.scss";
+
+.home {
+  margin-top: $header-height - 70px;
+}
+
+.riji-list-header {
+  width: 100%;
+  li {
+    display: inline-block;
+    line-height: 40px;
+    margin: 0px 20px 15px -20px;
+    font-size: 15px;
+    font-weight: 400;
+    color: $color-grey;
+    border-bottom: none;
+    cursor: pointer;
+  }
+  li.active {
+    color: $color-black;
+    font-weight: 400;
+    border-bottom: 4px solid $color-black;
+  }
+}
+
+.pagination {
+  @include layout;
+}

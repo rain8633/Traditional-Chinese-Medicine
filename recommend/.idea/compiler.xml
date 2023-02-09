@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yaofang-model" />
+        <module name="yaofang-web" />
+        <module name="mail-serve" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mail-serve" target="1.8" />
+      <module name="recommend" target="1.8" />
+      <module name="yaofang-model" target="1.8" />
+      <module name="yaofang-serve" target="1.8" />
+      <module name="yaofang-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mail-serve" options="-parameters" />
+      <module name="recommend" options="-parameters" />
+      <module name="yaofang-model" options="-parameters" />
+      <module name="yaofang-web" options="-parameters" />
+    </option>
+  </component>
+</project>

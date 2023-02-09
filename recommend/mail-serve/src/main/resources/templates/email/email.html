@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<div style="width: 350px;height: 360px;
+				text-align: center;
+				margin: 0 auto;
+				background-color: #FCFCFC;
+				border-radius: 4px;
+				border: 1px solid azure;
+				padding: 60px 0;
+				-webkit-border-radius: 8px;
+				-moz-border-radius: 8px;
+				-webkit-box-shadow: #666 0px 0px 10px;
+				-moz-box-shadow: #666 0px 0px 10px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="310"
+           style="-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 310px; margin: -20px auto;">
+
+
+        <tbody>
+<!--        <tr style="page-break-before: always">-->
+<!--            <td align="center">-->
+<!--                <img th:src="@{/image/jihuo.png}"  th:href="@{http://localhost:8080}" height="90" width="90"-->
+<!--                     style="-ms-interpolation-mode: bicubic;">-->
+<!--            </td>-->
+<!--        </tr>-->
+
+        <tr style="page-break-before: always;">
+            <td valign="top">
+                <h1 style="font-family: Georgia; font-size: 21px; line-height: 29px; font-weight: normal; margin: 50px 0 30px 0; text-align: center;">
+                    您好！用户</h1>
+                <p class="primary"
+                   style="font-family: sans-Georgia; font-size: 15px; line-height: 21px; font-weight: normal; margin: 0 0 40px 0; text-align: center;">
+                    请在24小时内点击下面的按钮来激活账户，且链接只能使用一次，请尽快激活！</p>
+
+
+            </td>
+        </tr>
+
+
+        <tr height="50">
+            <td align="center" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" height="100%" width="310" id="email-button"
+                       style="-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;  border-radius: 4px; height: 50px; width: 310px !important;">
+                    <tbody>
+                    <tr style="page-break-before: always">
+                        <td align="center" valign="middle" id="button-content"
+                            style="font-family: Georgia; font-weight: normal; text-align: center; margin: 0; color: #ffffff; font-size: 20px; line-height: 100%;">
+
+                            <a th:href="${url}"
+                               id="button-link"
+                               style="color: #FBFCFC !important;font-weight: 600;display: inline-block;border-radius: 4px;padding: 12px 45px;background-color: #44A0B3;text-decoration: none;"
+                               rel="noopener" target="_blank">点击激活</a>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr style="page-break-before: always">
+            <td border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+                <br>
+                <p class="secondary"
+                   style="font-family: sans-serif; font-weight: normal; margin: 15px auto; text-align: center; color: #737373; font-size: 11px; line-height: 18px; width: 310px !important; word-wrap:break-word">
+                    这是一封自动发送的邮件；如果您并未要求但收到这封信件，您不需要进行任何操作。</p>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

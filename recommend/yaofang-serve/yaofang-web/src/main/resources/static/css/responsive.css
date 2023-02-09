@@ -1,0 +1,120 @@
+container@media (max-width: 1366px){
+  h1, h2{
+    margin: 4px 0;
+  }
+
+  h1{
+    font-size: 91px;
+  }
+
+  h2{
+    font-size: 32px;
+  }
+
+  p{
+    font-size: 13px;
+  }
+
+  section{
+    margin-bottom: 28px;
+  }
+
+  .btn-action{
+    padding: 14px 42px;
+    font-size: 13px;
+  }
+
+  .illustration{
+    width: 662px;
+    height: 306px;
+  }
+
+  .illustration .island{
+    width: 662px;
+    height: 306px;
+  }
+
+  .illustration .char{
+    width: 124px;
+    height: 214px;
+    left: 301px;
+    top: 70px;
+  }
+
+  .illustration .hand{
+    width: 93px;
+    height: 52px;
+    left: 392px;
+    top: 105px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, h2{
+    margin: 3px 0;
+  }
+
+  section{
+    margin-bottom: 22px;
+  }
+
+  .btn-action{
+    padding: 12px 34px;
+    font-size: 13px;
+  }
+
+  .illustration{
+    width: 463.4px;
+    height: 214.2px;
+  }
+
+  .illustration .island{
+    width: 463.4px;
+    height: 214.2px;
+  }
+
+  .illustration .char{
+    width: 86.8px;
+    height: 149.8px;
+    left: 210.7px;
+    top: 49px;
+  }
+
+  .illustration .hand{
+    width: 65.1px;
+    height: 36.4px;
+    left: 274.4px;
+    top: 73.5px;
+  }
+}
+
+@media (max-width: 468px) {
+  .btn-action{
+    padding: 10px 30px;
+    font-size: 13px;
+  }
+
+  .illustration{
+    width: 254.9px;
+    height: 117.8px;
+  }
+
+  .illustration .island{
+    width: 254.9px;
+    height: 117.8px;
+  }
+
+  .illustration .char{
+    width: 47.7px;
+    height: 82.4px;
+    left: 115.9px;
+    top: 27px;
+  }
+
+  .illustration .hand{
+    width: 35.8px;
+    height: 20px;
+    left: 151px;
+    top: 40.4px;
+  }
+}

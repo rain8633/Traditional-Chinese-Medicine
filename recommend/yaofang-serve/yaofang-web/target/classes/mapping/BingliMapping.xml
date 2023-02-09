@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syxu.yaofang.mapper.BingliMapper">
+
+    <insert id="addBingLi" parameterType="Bingli">
+         insert into bingli(client_id,doctor_id,real_name,client_age,info,pic1,pic2,pic3)
+         values (#{clientId},#{doctorId},#{realName}, #{clientAge},#{info},#{pic1},#{pic2},#{pic3})
+    </insert>
+
+    <select id="queryAllBingli" parameterType="Integer" resultType="com.syxu.yaofang.pojo.BingLiPoJo">
+        select bingli.id,user_name,real_name,phone,email,client_age,info,pic1,pic2,pic3,status
+        from bingli
+        left join client on client.id = bingli.client_id and bingli.doctor_id = #{doctorId}
+    </select>
+
+    <select id="queryNewBingliNum" parameterType="Integer" resultType="Integer">
+        select count(*) from bingli where status = 0 and doctor_id = #{doctorId}
+    </select>
+
+    <select id="queryNewBingLi" parameterType="Integer" resultType="com.syxu.yaofang.pojo.BingLiPoJo">
+         select bingli.client_id,bingli.doctor_id, bingli.id,user_name,real_name,phone,email,client_age,info,pic1,pic2,pic3,status
+        from bingli
+        left join client on client.id = bingli.client_id and bingli.doctor_id = #{doctorId}
+         where bingli.status = 0
+    </select>
+
+    <select id="queryAllClientBingli" parameterType="Integer" resultType="com.syxu.yaofang.pojo.BingLiPoJo">
+        select bingli.client_id,dname,ks_name,bingli.doctor_id, bingli.id,user_name,real_name,client.phone,client.email,client_age,bingli.info,pic1,pic2,pic3,status
+        from bingli
+        left join client on client.id = bingli.client_id
+        left join doctor on doctor.id = bingli.doctor_id
+        where bingli.client_id = #{userId}
+    </select>
+
+    <select id="queryBingLiById" parameterType="Integer" resultType="com.syxu.yaofang.pojo.BingLiPoJo">
+        select bingli.client_id,dname,ks_name,bingli.doctor_id, bingli.id,user_name,real_name,client.phone,client.email,client_age,bingli.info,pic1,pic2,pic3,status
+        from bingli
+        left join client on client.id = bingli.client_id and bingli.client_id = #{userId}
+        left join doctor on doctor.id = bingli.doctor_id
+        where bingli.id = #{bingliId}
+    </select>
+
+    <update id="updateBingLiStatus" parameterType="Integer">
+        update bingli set status = #{status} where id=#{bingliId}
+    </update>
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syxu.yaofang.mapper.DialogMapper">
+
+    <insert id="addDialog" parameterType="Dialog">
+        insert into dialog(bingli_id,zhusu,xbshi,jwshi,result,solution,yizhu)
+        values (#{bingliId},#{zhusu},#{xbshi},#{jwshi},#{result},#{solution},#{yizhu})
+    </insert>
+
+    <select id="queryDialogByBingLiId" parameterType="Integer" resultType="Dialog">
+        select * from dialog where bingli_id = #{bingliId}
+    </select>
+
+    <update id="updateDialog" parameterType="Dialog">
+        update dialog set zhusu = #{zhusu},xbshi=#{xbshi},jwshi=#{jwshi},result=#{result},solution=#{solution},
+          yizhu=#{yizhu} where id = #{id}
+    </update>
+
+    <update id="updateDialogScore" parameterType="Integer">
+        update dialog set score = #{score} where id=#{dialogId}
+    </update>
+
+    <select id="queryDialogRecommendList" resultType="com.syxu.yaofang.pojo.DialogPoJo">
+        select dialog.id,bingli_id,zhusu,xbshi,jwshi,result,solution,yizhu,dname,ks_name,score
+        from dialog
+        left join bingli on bingli.id = dialog.bingli_id
+        left join doctor on doctor.id = bingli.doctor_id
+        where bingli.status = 3
+        order by dialog.score
+    </select>
+</mapper>

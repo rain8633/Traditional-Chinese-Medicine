@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mail-serve/mail-serve.iml" filepath="$PROJECT_DIR$/mail-serve/mail-serve.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/recommend.iml" filepath="$PROJECT_DIR$/.idea/recommend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yaofang-serve/yaofang-model/yaofang-model.iml" filepath="$PROJECT_DIR$/yaofang-serve/yaofang-model/yaofang-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yaofang-serve/yaofang-serve.iml" filepath="$PROJECT_DIR$/yaofang-serve/yaofang-serve.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yaofang-serve/yaofang-web/yaofang-web.iml" filepath="$PROJECT_DIR$/yaofang-serve/yaofang-web/yaofang-web.iml" />
+    </modules>
+  </component>
+</project>

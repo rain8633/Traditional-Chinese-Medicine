@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>错误</title>
+    <!-- 地址栏显示 -->
+    <link rel="Shortcut Icon" th:href="@{/image/error.ico}" type="image/x-icon" />
+    <!-- 收藏栏也显示 -->
+    <link rel="Bookmark" th:href="@{/image/error.ico}" type="image/x-icon" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link type="text/css" media="all" th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link type="text/css" media="all" th:href="@{/css/responsive.css}" rel="stylesheet"/>
+</head>
+<body>
+<!-- Header -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1>Error!</h1>
+                <!-- <h2 th:text="${errorMessage}"></h2>-->
+                <p>It looks like you're lost...</p>
+
+                <h2 th:text="${error}"></h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Header -->
+
+<!-- Illustration -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="illustration">
+                    <div class="island"></div>
+                    <div class="char"></div>
+                    <div class="hand"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Illustration -->
+<!-- Button -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <a th:href="${url}">
+                    <div class="btn btn-action">返回登录界面</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

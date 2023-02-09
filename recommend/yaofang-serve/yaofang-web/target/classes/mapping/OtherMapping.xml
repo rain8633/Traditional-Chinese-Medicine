@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syxu.yaofang.mapper.OtherMapper">
+
+    <select id="findHospByCity" parameterType="String" resultType="hosp">
+        select distinct hosp_name from doctor where city_name = #{city}
+    </select>
+
+    <select id="findKeshiByHosp" resultType="keshi" parameterType="String">
+        select distinct ks_name from doctor where hosp_name = #{hosp}
+    </select>
+
+    <select id="findDocByKeShi" parameterType="String" resultType="Doctor">
+        select * from doctor where ks_name = #{keshi} and hosp_name = #{hosp} and city_name = #{city}
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>激活成功</title>
+		<!-- 地址栏显示 -->
+		<link rel="Shortcut Icon" th:href="@{/image/doctor.ico}" type="image/x-icon" />
+		<!-- 收藏栏也显示 -->
+		<link rel="Bookmark" th:href="@{/image/doctor.ico}" type="image/x-icon" />
+		<link th:href="@{/css/dmail.css}" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="fmail-brand">
+			<img th:src="@{/image/zhongyi.png}" alt="logo">
+		</div>
+		</br>
+		<div class="mail">
+			<div>
+				<h3>账户激活成功</h3>
+			</div>
+
+			<div class="svg">
+				<img th:src="@{/image/mail.svg}" />
+			</div>
+			</br>
+			</br>
+			</br>
+			<div>
+				<a th:href="${url}">
+					<div class="btn">点击登录</div>
+				</a>
+			</div>
+
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,61 @@
+.fmail-brand {
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto -60px auto;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 4px 40px rgba(0, 0, 0, .07);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, .07);
+    padding: 10px;
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+}
+
+.fmail-brand img {
+    width: 100%;
+}
+
+.mail {
+    width: 400px;
+    height: 320px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    border: 1px solid azure;
+    padding: 60px 0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+}
+
+.svg {
+    width: 260px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h3 {
+    font-family: "Georgia";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.btn {
+    border-style: none;
+    color: #FBFCFC !important;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 12px 45px;
+    font-size: 15px;
+    background-color: #44A0B3;
+    text-transform: uppercase;
+}
